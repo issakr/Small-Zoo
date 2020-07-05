@@ -21,7 +21,17 @@ import de.stl.saar.internetentw1.myzoo.model.Compound;
 @Controller
 public class ZooController {
 	@RequestMapping("/")
-	public String index() {
+	public String index() {		
 		return "index";
-    }
+	}
+	@RequestMapping("showAllCompounds")
+	public String showAllCompounds(Database DB){
+	//	Database DB = new Database();
+		List<Compound> listComp = Database.findAllCompounds();
+		
+		DB.
+		return "showCompounds";
+	}
+
 }
+
