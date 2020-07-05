@@ -25,12 +25,6 @@ public class ZooController {
 	public String index() {		
 		return "index";
 	}
-	
-	@RequestMapping("hallo")
-	public String hallo(int a){
-		a=a+1;
-		return "hallo";
-	}
 
 
 }
