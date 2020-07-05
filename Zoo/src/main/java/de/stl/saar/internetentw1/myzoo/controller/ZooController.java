@@ -20,11 +20,18 @@ import de.stl.saar.internetentw1.myzoo.model.Compound;
  */
 @Controller
 public class ZooController {
+	
 	@RequestMapping("/")
 	public String index() {		
 		return "index";
 	}
 	
+	@RequestMapping("hallo")
+	public String hallo(int a){
+		a=a+1;
+		return "hallo";
+	}
+
 
 }
 
