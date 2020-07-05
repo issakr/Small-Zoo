@@ -24,14 +24,7 @@ public class ZooController {
 	public String index() {		
 		return "index";
 	}
-	@RequestMapping("showAllCompounds")
-	public String showAllCompounds(Database DB){
-	//	Database DB = new Database();
-		List<Compound> listComp = Database.findAllCompounds();
-		
-		DB.
-		return "showCompounds";
-	}
+	
 
 }
 
