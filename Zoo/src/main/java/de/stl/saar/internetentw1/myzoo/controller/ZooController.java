@@ -35,28 +35,50 @@ public class ZooController {
 	}
 	
 	@RequestMapping("check-compound")
-	public String hallo(Model model, String compoundName){
+	public String checkCompound(Model model, String compoundName){
 		try{
-		if(compoundName.isEmpty()){
+			if(compoundName.isEmpty()){
+				model.addAttribute("chooseCompound", true);
+				return "index";
+			}
+			compound = Database.findCompoundByName(compoundName);
+			model.addAttribute("compound", compound);
+			animals = compound.getAnimals();
+			model.addAttribute("animals", animals);
+		}catch(NullPointerException e) {
 			model.addAttribute("chooseCompound", true);
 			return "index";
 		}
-		compound = Database.findCompoundByName(compoundName);
-		model.addAttribute("compound", compound);
-		animals = compound.getAnimals();
-		model.addAttribute("animals", animals);
-		}catch(NullPointerException e) {
-		model.addAttribute("chooseCompound", true);
-		return "index";
-	}
 		return "compound";
 	}
-/*
+	
+	@RequestMapping("check-animal")
+	public String checkanimal(Model model, String animalName){
+		try{
+			if(animalName.isEmpty()){
+				model.addAttribute("chooseAnimal", true);
+				return "compound";
+			}
+			animal = Database.findAnimalByName(animalName);
+			model.addAttribute("animal", animal);
+		}catch(NullPointerException e){
+			model.addAttribute("chooseAnimal", true);
+			return "compound";
+		}
+		return "animal";
+	}
+
+	@RequestMapping("feed")
+	public String feed(){
+		animal.feed();
+		return "animal";
+		}
+
 	@RequestMapping("compound")
 	public String compound(){
 		return "compound";
 		}
-	*/
+	
 
 	/**
 	 * 	Diese Methode wird als erste ausgefuehrt
