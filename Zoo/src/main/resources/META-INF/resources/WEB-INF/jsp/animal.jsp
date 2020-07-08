@@ -10,7 +10,14 @@ pageEncoding="UTF-8" errorPage ="error.jsp"%>
     </head>
     <body>
         <h4>
-            <b><c:out value="Sie beobachten ${animal.animalName} und ${animal.animalName} beobachtet böse zurück."/></b><br/>
+            <c:set var="boese" scope="request" value ="" />
+            
+            <b><c:out value="Sie beobachten ${animal.animalName} und ${animal.animalName} beobachtet"></c:out> 
+                <c:choose>
+                    <c:when test="${animal.hunger >= 6}">böse</c:when> 
+                    <c:when test="${animal.hunger == 0}">fröhlich</c:when> 
+                </c:choose>
+                zurück.</b><br/>
         </h4>
         <img src="<c:url value="images/${animal.image}.jpg" />" alt="${animal.animalName}" width="200" height="200"><br/><br/>
         <c:choose>

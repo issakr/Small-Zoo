@@ -34,8 +34,8 @@ public class ZooController {
 	
 	@RequestMapping("check-compound")
 	public String checkCompound(Model model, String compoundName){
-		try{
-			if(compoundName.isEmpty()){
+		
+			if(compoundName==null){
 				model.addAttribute("chooseCompound", true);
 				return "index";
 			}
@@ -43,26 +43,20 @@ public class ZooController {
 			model.addAttribute("compound", compound);
 			animals = compound.getAnimals();
 			model.addAttribute("animals", animals);
-		}catch(NullPointerException e) {
-			model.addAttribute("chooseCompound", true);
-			return "index";
-		}
+		
 		return "compound";
 	}
 	
 	@RequestMapping("check-animal")
 	public String checkanimal(Model model, String animalName){
-		try{
-			if(animalName.isEmpty()){
+		
+			if(animalName==null){
 				model.addAttribute("chooseAnimal", true);
 				return "compound";
 			}
 			animal = Database.findAnimalByName(animalName);
 			model.addAttribute("animal", animal);
-		}catch(NullPointerException e){
-			model.addAttribute("chooseAnimal", true);
-			return "compound";
-		}
+		
 		return "animal";
 	}
 
@@ -81,6 +75,8 @@ public class ZooController {
 	/**
 	 * 	Diese Methode wird als erste ausgefuehrt
 	 **/
+
+	 
 	@ModelAttribute
 	public void modelData(Model model) {
 		model.addAttribute("compounds", compounds);
@@ -88,6 +84,6 @@ public class ZooController {
 		model.addAttribute("animals", animals);
 		model.addAttribute("animal", animal);
 	}
-
+	
 }
 
