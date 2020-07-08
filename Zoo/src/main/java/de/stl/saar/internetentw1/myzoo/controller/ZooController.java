@@ -1,9 +1,7 @@
 package de.stl.saar.internetentw1.myzoo.controller;
 
 import java.util.List;
-import java.util.Map;
 
-import javax.xml.crypto.Data;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
