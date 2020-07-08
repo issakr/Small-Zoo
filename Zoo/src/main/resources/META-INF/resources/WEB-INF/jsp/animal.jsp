@@ -14,7 +14,7 @@ pageEncoding="UTF-8" errorPage ="error.jsp"%>
             
             <b><c:out value="Sie beobachten ${animal.animalName} und ${animal.animalName} beobachtet"></c:out> 
                 <c:choose>
-                    <c:when test="${animal.hunger >= 6}">böse</c:when> 
+                    <c:when test="${animal.hunger >= 3}">böse</c:when> 
                     <c:when test="${animal.hunger == 0}">fröhlich</c:when> 
                 </c:choose>
                 zurück.</b><br/>

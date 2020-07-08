@@ -39,6 +39,7 @@
            </c:forEach>
           </ul>
     </form>
+    
     <form action="/" method="POST">
       <input type="submit" value="zurück zur Karte" name="zurueckbutton"/>
     </form>

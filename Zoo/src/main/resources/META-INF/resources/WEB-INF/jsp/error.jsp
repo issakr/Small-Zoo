@@ -1,4 +1,6 @@
-<%@ page isErrorPage="true" import="java.io.*" %>    
+<%@ page isErrorPage="true" import="java.io.*" %>   
+
+<!-- Fehlerausgabe für Entwicklungsphase-->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
