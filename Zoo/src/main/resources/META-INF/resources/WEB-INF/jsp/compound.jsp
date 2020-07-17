@@ -18,33 +18,33 @@
     </h1> 
     <h3>Sie sehen diese Tiere:</h3>
     <br/>
-    <form method="POST" action="check-animal">
-      <c:forEach	items="${animals}" var="animal">
-        <c:if test="${animal.isHidden() == false}">
-          <input type="radio" name="animalName" value="${animal.animalName}"/>
-          <c:out value="${animal.animalName}	"/>
+    <form method="POST" action="check-animal"> <!--Request zuordnen-->
+      <c:forEach	items="${animals}" var="animal"> <!--Tierliste des Geheges durchlaufen-->
+        <c:if test="${animal.isHidden() == false}"> <!--Prüfen ob es sich nicht versteckt-->
+          <input type="radio" name="animalName" value="${animal.animalName}"/> <!--Dann Single Choice Button ausgeben und Tiernamenzuordnen-->
+          <c:out value="${animal.animalName}	"/><!--entsprechenden Tiernamen ausgeben-->
         </c:if>
       </c:forEach>
 
-      <input type="submit" value="Gehe zum Tier" name="buttonTier"/>
-      <c:choose>  
-        <c:when test="${not empty chooseAnimal}">
-			    <p><span style="color: rgb(255, 0, 0);">
-	        	Sie haben kein Tier ausgewählt!</span></p> 
-		    </c:when>
-       </c:choose>
+      <input type="submit" value="Gehe zum Tier" name="buttonTier"/> <!--Absende Button-->
+       
+        <c:if test="${not empty chooseAnimal}"> <!--Prüfe ob Gehege ausgewählt ist-->
+			    <p><span style="color: rgb(255, 0, 0);"> <!--Textfarbe ändern-->
+	        	Sie haben kein Tier ausgewählt!</span></p> <!--Fehlermeldung-->
+		    </c:if>
+       
           <h3>Diese Tiere verstecken sich:</h3>
           <ul>
-            <c:forEach	items="${animals}" var="animal">
-              <c:if test="${animal.isHidden() == true}">
-                <li><c:out value="${animal.animalName}"/></li><br/>
+            <c:forEach	items="${animals}" var="animal"> <!--Tierliste des Geheges durchlaufen-->
+              <c:if test="${animal.isHidden() == true}"> <!--Prüfen ob es sich  versteckt-->
+                <li><c:out value="${animal.animalName}"/></li><br/> <!-- mit Listenpunkt ausgeben-->
 		  	     </c:if>
            </c:forEach>
           </ul>
     </form>
     
-    <form action="/" method="POST">
-      <input type="submit" value="zurück zur Karte" name="zurueckbutton"/>
+    <form action="/" method="POST"> <!--Request zuordnen-->
+      <input type="submit" value="zurück zur Karte" name="zurueckbutton"/> <!--Absende Button-->
     </form>
   </body>
 </html>

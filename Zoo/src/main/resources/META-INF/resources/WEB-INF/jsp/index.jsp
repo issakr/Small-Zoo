@@ -16,16 +16,16 @@
     <h3>Schauen Sie auf unsere Karte</h3>
 
     <form method="POST" action="check-compound">
-      <c:forEach	items="${compounds}" var="compound">
-        <input type="radio" name="compoundName" value="${compound.compoundName}"/>
-        <c:out value="${compound.compoundName}" />
+      <c:forEach	items="${compounds}" var="compound"> <!--Liste Compouns aus ZooControlle durchlaufen-->
+        <input type="radio" name="compoundName" value="${compound.compoundName}"/> <!--Single Choice Buttons ausgeben und Gehege zuordnen-->
+          <c:out value="${compound.compoundName}" /> <!--entsprechende Gehegenamen ausgeben-->
       </c:forEach>
       <br/><br/>
-      <input type="submit" value="Gehe zum Gehege" name="buttonGehege"/>
+      <input type="submit" value="Gehe zum Gehege" name="buttonGehege"/> <!--Absende Button-->
        <c:choose>  
-          <c:when test="${not empty chooseCompound}">
-			      <p><span style="color: rgb(255, 0, 0);">
-	          Sie haben kein Gehege ausgewählt!</span></p> 
+          <c:when test="${not empty chooseCompound}"> <!--Prüfe ob Gehege ausgewählt ist-->
+			      <p><span style="color: rgb(255, 0, 0);"> <!--Textfarbe ändern-->
+	          Sie haben kein Gehege ausgewählt!</span></p> <!--Fehlermeldung-->
 		      </c:when>
        </c:choose>
     </form>
