@@ -1,6 +1,9 @@
 <%@ page isErrorPage="true" import="java.io.*" %>   
 
+<!-- @author Sakr, Issam & Wagner, David-->
+
 <!-- Fehlerausgabe für Entwicklungsphase-->
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

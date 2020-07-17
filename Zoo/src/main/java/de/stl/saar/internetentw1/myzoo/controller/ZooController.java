@@ -17,7 +17,8 @@ import de.stl.saar.internetentw1.myzoo.model.Compound;
  * geben an, wohin die Navigation beim Aufruf einer bestimmten URL erfolgen soll,
  * nehmen Request-Parameter entgegen, die von Formularen gesendet wurden, und 
  * schreiben neue Parameter in die Requests.
- * @author christopher
+ * 
+ * @author Sakr, Issam & Wagner, David
  *
  */
 @Controller
