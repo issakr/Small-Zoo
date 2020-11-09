@@ -17,7 +17,11 @@ package de.stl.saar.internetentw1.myzoo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+/**
+ * StartKlasse
+ * @author Issam Sakr
+ *
+ */
 @SpringBootApplication
 public class MyZooApplication {
 

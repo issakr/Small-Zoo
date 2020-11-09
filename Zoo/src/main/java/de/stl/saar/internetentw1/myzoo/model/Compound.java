@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Stellt ein Gehege im Zoo dar. Ein Gehege enthaelt eine Menge an Tieren.
- * @author christopher
+ * @author Issam
  *
  */
 public class Compound {

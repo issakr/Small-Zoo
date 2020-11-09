@@ -10,7 +10,7 @@ import de.stl.saar.internetentw1.myzoo.model.Compound;
 /**
  * Diese Klasse simuliert eine kleine Datenbank mit Hilfe einer statischen Liste
  * und statischen Zugriffsmethoden.
- * @author christopher
+ * @author Issam
  *
  */
 public class Database {

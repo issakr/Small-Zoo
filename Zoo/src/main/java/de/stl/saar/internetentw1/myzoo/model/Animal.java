@@ -2,7 +2,7 @@ package de.stl.saar.internetentw1.myzoo.model;
 
 /**
  * Beschreibt ein Tier. 
- * @author christopher
+ * @author Issam
  *
  */
 public class Animal {
